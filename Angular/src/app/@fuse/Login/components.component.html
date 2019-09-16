@@ -1,0 +1,38 @@
+
+  <form [formGroup]="loginForm" class="container-form" (ngSubmit)="form.form.valid && loginUser()" #form='ngForm'>
+    <div class="container-input">
+      <input type="text" placeholder="Login" class="input-name" formControlName="email" [(ngModel)]='login'/>
+  
+      <div class="alert alert-danger"   *ngIf="loginForm.controls['email'].invalid && loginForm.controls['email'].touched">
+             Не Коректний email
+      </div>
+  
+    </div>
+  
+    <div class="container-input">
+      <input class="input-password" type="text" placeholder="Password" formControlName="password2" [(ngModel)]='password'>
+      <div class="alert alert-danger"   *ngIf="loginForm.controls['password2'].invalid && loginForm.controls['password2'].touched"> 
+             Мінімум 3 символа
+      </div>
+  
+  
+    </div>
+    <!-- ================================================================================ -->
+    <!-- <div class="container-input">
+      <input class="input-password" type="text" placeholder="Password repeat" formControlName="password2" [(ngModel)]='password'>
+  
+      <div class="alert alert-danger"   *ngIf="loginForm.controls['password2'].invalid && loginForm.controls['password2'].touched">
+             Мінімум 3 символа
+      </div>
+  
+      <div class="alert alert-danger"   *ngIf="val">
+             Паролі не співпадають с
+      </div> 
+    </div> -->
+  
+    <div class="container-btn">
+      <button class="form-btn" type="submit" (click)='loginUser()' mat-stroked-butto>Login</button> 
+      <button class="form-btn"  routerLink='/register' mat-stroked-butto>Registrate</button>   
+    </div> 
+  </form>
+

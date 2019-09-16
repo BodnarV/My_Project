@@ -1,0 +1,59 @@
+<div class="container-form">
+        <span class="form-title">
+            <!-- <h2>Registration Form</h2> -->
+            <h2>HRM System</h2>
+        </span>
+        <form [formGroup]="loginForm" class="container-input" (ngSubmit)="form.form.valid && registerUser()" #form='ngForm'>
+    
+            <div>
+                <input class="input-name" type="text" [(ngModel)]="user.login" placeholder="Login" formControlName="email">
+    
+                <div class="alert alert-danger"  
+                    *ngIf="loginForm.controls['email'].invalid && loginForm.controls['email'].touched">
+                         Некоректний Login
+                </div> 
+    
+            </div>  
+            <div>
+                <input class="input-username" type="text" [(ngModel)]="user.name" placeholder="User name"
+                    formControlName="userName">
+    
+                <div class="alert alert-danger"  
+                    *ngIf="loginForm.controls['userName'].invalid && loginForm.controls['userName'].touched">
+                         Некоректний userName
+                </div>
+            </div>
+    
+            <div>
+             <input class="input-password" type="text" hrmsPasswordPower [(ngModel)]="user.password" placeholder="Password"
+                formControlName="password">
+    
+                <div class="alert alert-danger"  
+                    *ngIf="loginForm.controls['password'].invalid && loginForm.controls['password'].touched">
+                         Мінумум 3 символа
+               </div >
+            </div>
+    
+            <div>
+                    <input class="input-password" type="text" hrmsPasswordPower [(ngModel)]="user.password2" placeholder="Confirm Password"
+                        formControlName="password2">
+            
+                        <div class="alert alert-danger"  
+                            *ngIf="loginForm.controls['password2'].invalid && loginForm.controls['password2'].touched">
+                                 Мінумум 3 символа
+                        </div>
+    
+                        <div class="alert alert-danger" *ngIf="val && loginForm.controls['password2'].touched">
+                                  Паролі не співпадають
+                        </div>
+            
+            </div>
+    
+            <div class="container-btn">
+                <button class="form-btn" routerLink='/login'>Login</button>
+                <button class="form-btn" type="submit">Register</button>
+               
+            </div>
+        </form>
+    
+    </div>

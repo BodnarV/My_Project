@@ -1,0 +1,33 @@
+*{
+    font-size: x-large;
+
+}
+.block{
+   
+    margin: 25px;
+    /* border: 1px solid black; */
+   
+    width: 100%;
+    
+    justify-content: center;
+    font-size: x-large;
+
+    
+
+}
+.block div{
+    display: flex;
+    justify-content: space-around;
+    /* margin-top: 17px; */
+
+}
+.edit{
+    margin-left:24%;
+
+    margin-top:50px;
+    width: 52%;
+    font-size: x-large;
+}
+.edit div{
+    justify-content: space-between;
+}
