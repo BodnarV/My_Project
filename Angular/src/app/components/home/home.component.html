@@ -1,0 +1,11 @@
+<div class="container">
+
+        <div *ngFor="let message of messages">
+                {{message.text}}
+        </div>
+
+        <hr>
+
+    <input type="text" [(ngModel)]='text' (keyup)="$event.keyCode == 13 && sendMessage()">
+    <button (click)='sendMessage()'>click</button>
+</div>
