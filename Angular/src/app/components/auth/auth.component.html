@@ -1,0 +1,34 @@
+<div class="cont">
+
+  <div class="text">Dairy app</div>
+  <div class="text2">Comment with no sense</div>
+
+  <div class="show" *ngIf='show'>
+
+
+    <form [formGroup]="loginForm" (ngSubmit)="log()">
+      <div class="example-form">
+
+        <mat-form-field class="example-full-width">
+          <input matInput formControlName="login" placeholder="Login" type="text">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <input matInput formControlName="password" placeholder="Password" type="text">
+        </mat-form-field>
+
+        <div class="container-btn ">
+          <button [disabled]="loginForm.invalid" class="form-btn" type="submit" mat-raised-button>Login</button>
+        </div>
+      </div>
+
+    </form>
+  </div>
+
+
+  <div class="hide" *ngIf='hide'>
+    <div style="color: blanchedalmond;font-size:larger">Id: {{user}}</div>
+    <button mat-raised-button (click)='logout()'>Log out</button>
+  </div>
+
+</div>
